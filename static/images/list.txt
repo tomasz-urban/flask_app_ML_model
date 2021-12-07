@@ -1,0 +1,6 @@
+img1 - Photo by Morning Brew on Unsplash
+img2 - Photo by Weiye Tan on Unsplash
+img3 - Photo by Jorge Ramirez on Unsplash
+
+
+background-image: linear-gradient(to top, rgba(19, 21, 25, 0.5), rgba(19, 21, 25, 0.5)), url("../../images/img3.jpg");
