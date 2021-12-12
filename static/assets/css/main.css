@@ -143,7 +143,7 @@ input, select, textarea {
 		color: #ffffff;
 		font-family: "Source Sans Pro", sans-serif;
 		font-weight: 300;
-		font-size: 1rem;
+		font-size: 0.9rem;
 		line-height: 1.65;
 	}
 
@@ -407,7 +407,7 @@ input, select, textarea {
 		letter-spacing: 0.2rem;
 		line-height: 1.5;
 		margin: 0 0 1rem 0;
-		text-transform: uppercase;
+/*		text-transform: uppercase;*/
 	}
 
 	input[type="text"],
@@ -602,6 +602,43 @@ input, select, textarea {
 		opacity: 1.0;
 	}
 
+/* form-control */
+
+
+            /* Styling form-control Class */
+            .form-control {
+                text-align: left;
+                margin-bottom: 25px;
+            }
+
+            /* Styling form-control Label */
+            .form-control label {
+                display: block;
+                margin-bottom: 10px;
+            }
+
+            /* Styling form-control input,
+            select, textarea */
+            .form-control input,
+            .form-control select,
+            .form-control textarea {
+                border: 1px solid #777;
+                border-radius: 2px;
+                font-family: inherit;
+                padding: 10px;
+                display: block;
+                width: 95%;
+            }
+
+            /* Styling form-control Radio
+            button and Checkbox */
+            .form-control input[type="radio"],
+            .form-control input[type="checkbox"] {
+                border: 1px solid #FEFEFE;
+                border-radius: 2px;
+                display: inline-block;
+                width: auto;
+            }
 
 
 /* Box */
