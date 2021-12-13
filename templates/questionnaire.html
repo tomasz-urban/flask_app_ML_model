@@ -1,0 +1,164 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<article id="questionnaire" class="active" style>
+
+        <h2 class="major">Heart disease questionnaire</h2>
+        <!-- Questionnaire Form -->
+        <form id="form">
+
+          <!-- Age -->
+          <div class="form-control">
+                <label for="age">
+                    1. Age
+                </label>
+                <input type="text"
+                       id="age"
+                       placeholder="-"
+                       required/>
+          </div>
+
+          <!-- Sex -->
+          <div class="form-control">
+                <label>
+                    2. Sex
+                </label>
+
+                <label for="male">
+                    <input type="radio"
+                           id="male"
+                           name="sex">Male</input>
+                </label>
+                <label for="female">
+                    <input type="radio"
+                           id="female"
+                           name="sex">Female</input>
+                </label>
+          </div>
+
+          <!-- cp -->
+          <div class="form-control">
+                <label>
+                    3. Chest pain type
+                </label>
+                <select name="cp" id="cp">
+                    <option value="-"> </option>
+                    <option value="0">Typical angina</option>
+                    <option value="1">Atypical angina</option>
+                    <option value="2">Non-anginal pain</option>
+                    <option value="3">Asymptomatic</option>
+                </select>
+          </div>
+
+          <!-- trestbps -->
+          <div class="form-control">
+                <label for="trestbps">
+                    4. Resting blood pressure (in mm Hg on admission to the hospital)
+                </label>
+                <input type="text"
+                       id="trestbps"
+                       placeholder="-" />
+          </div>
+
+          <!-- chol -->
+          <div class="form-control">
+                <label for="chol">
+                    5. Serum cholesterol in mg/dl
+                </label>
+                <input type="text"
+                       id="chol"
+                       placeholder="-" />
+          </div>
+
+          <!-- fbs -->
+          <div class="form-control">
+                <label>
+                    6. Is Your fasting blood sugar higher than 120 mg/dl ?
+                </label>
+
+                <label for="fbs_yes">
+                    <input type="radio"
+                           id="fbs_yes"
+                           name="fbs">Yes</input>
+                </label>
+                <label for="fbs_no">
+                    <input type="radio"
+                           id="fbs_no"
+                           name="fbs">No</input>
+                </label>
+          </div>
+
+          <!-- restecg -->
+          <div class="form-control">
+                <label>
+                    7. Resting electrocardiography results
+                </label>
+                <select name="restecg" id="restecg">
+                    <option value="-"> </option>
+                    <option value="0">Normal</option>
+                    <option value="1">Having ST-T wave abnormality (T wave inversions and/or ST elevation or depression of > 0.05 mV)</option>
+                    <option value="2">Showing probable or definite left ventricular hypertrophy by Estes' criteria</option>
+                </select>
+          </div>
+
+          <!-- thalach -->
+          <div class="form-control">
+                <label for="thalach">
+                    8. Maximum heart rate achieved
+                </label>
+                <input type="text"
+                       id="thalach"
+                       placeholder="-" />
+          </div>
+
+          <!-- exang -->
+          <div class="form-control">
+                <label>
+                    9. Do You have exercise induced angina?
+                </label>
+
+                <label for="exang_yes">
+                    <input type="radio"
+                           id="exang_yes"
+                           name="fbs">Yes</input>
+                </label>
+                <label for="exang_no">
+                    <input type="radio"
+                           id="exang_no"
+                           name="fbs">No</input>
+                </label>
+          </div>
+
+          <!-- oldpeak -->
+          <div class="form-control">
+                <label for="oldpeak">
+                    10. ST depression induced by exercise relative to rest
+                </label>
+                <input type="text"
+                       id="oldpeak"
+                       placeholder="-" />
+          </div>
+
+          <!-- slope -->
+          <div class="form-control">
+                <label>
+                    11. The slope of the peak exercise ST segment
+                </label>
+                <select name="slope" id="slope">
+                    <option value="-"> </option>
+                    <option value="0">Upsloping</option>
+                    <option value="1">Flat</option>
+                    <option value="2">Downsloping</option>
+                </select>
+          </div>
+
+            <!-- Submit button -->
+            <button type="submit" value="submit">
+                Submit
+            </button>
+        </form>
+
+    </article>
+
+{% endblock %}
