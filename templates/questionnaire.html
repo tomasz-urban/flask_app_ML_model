@@ -28,7 +28,8 @@
                 <label for="male">
                     <input type="radio"
                            id="male"
-                           name="sex">Male</input>
+                           name="sex"
+                           required>Male</input>
                 </label>
                 <label for="female">
                     <input type="radio"
@@ -42,7 +43,7 @@
                 <label>
                     3. Chest pain type
                 </label>
-                <select name="cp" id="cp">
+                <select name="cp" id="cp" required>
                     <option value="-"> </option>
                     <option value="0">Typical angina</option>
                     <option value="1">Atypical angina</option>
@@ -58,7 +59,8 @@
                 </label>
                 <input type="text"
                        id="trestbps"
-                       placeholder="-" />
+                       placeholder="-"
+                       required/>
           </div>
 
           <!-- chol -->
@@ -68,7 +70,8 @@
                 </label>
                 <input type="text"
                        id="chol"
-                       placeholder="-" />
+                       placeholder="-"
+                       required/>
           </div>
 
           <!-- fbs -->
@@ -80,7 +83,8 @@
                 <label for="fbs_yes">
                     <input type="radio"
                            id="fbs_yes"
-                           name="fbs">Yes</input>
+                           name="fbs"
+                           required>Yes</input>
                 </label>
                 <label for="fbs_no">
                     <input type="radio"
@@ -109,7 +113,8 @@
                 </label>
                 <input type="text"
                        id="thalach"
-                       placeholder="-" />
+                       placeholder="-"
+                       required/>
           </div>
 
           <!-- exang -->
@@ -121,7 +126,8 @@
                 <label for="exang_yes">
                     <input type="radio"
                            id="exang_yes"
-                           name="fbs">Yes</input>
+                           name="fbs"
+                           required>Yes</input>
                 </label>
                 <label for="exang_no">
                     <input type="radio"
@@ -137,7 +143,8 @@
                 </label>
                 <input type="text"
                        id="oldpeak"
-                       placeholder="-" />
+                       placeholder="-"
+                       required/>
           </div>
 
           <!-- slope -->
@@ -145,7 +152,7 @@
                 <label>
                     11. The slope of the peak exercise ST segment
                 </label>
-                <select name="slope" id="slope">
+                <select name="slope" id="slope" required>
                     <option value="-"> </option>
                     <option value="0">Upsloping</option>
                     <option value="1">Flat</option>
