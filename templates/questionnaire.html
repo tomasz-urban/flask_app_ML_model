@@ -6,7 +6,9 @@
 
         <h2 class="major">Heart disease questionnaire</h2>
         <!-- Questionnaire Form -->
-        <form id="form">
+        <form action="/questionnaire"
+              id="prediction_data"
+              method="POST">
 
           <!-- Age -->
           <div class="form-control">
@@ -15,6 +17,7 @@
                 </label>
                 <input type="text"
                        id="age"
+                       name="age"
                        placeholder="-"
                        required/>
           </div>
@@ -29,12 +32,14 @@
                     <input type="radio"
                            id="male"
                            name="sex"
+                           value="1"
                            required>Male</input>
                 </label>
                 <label for="female">
                     <input type="radio"
                            id="female"
-                           name="sex">Female</input>
+                           name="sex"
+                           value="0">Female</input>
                 </label>
           </div>
 
@@ -44,7 +49,7 @@
                     3. Chest pain type
                 </label>
                 <select name="cp" id="cp" required>
-                    <option value="-"> </option>
+                    <option value="" disabled selected hidden> - </option>
                     <option value="0">Typical angina</option>
                     <option value="1">Atypical angina</option>
                     <option value="2">Non-anginal pain</option>
@@ -84,12 +89,14 @@
                     <input type="radio"
                            id="fbs_yes"
                            name="fbs"
+                           value="1"
                            required>Yes</input>
                 </label>
                 <label for="fbs_no">
                     <input type="radio"
                            id="fbs_no"
-                           name="fbs">No</input>
+                           name="fbs"
+                           value="0">No</input>
                 </label>
           </div>
 
@@ -99,7 +106,7 @@
                     7. Resting electrocardiography results
                 </label>
                 <select name="restecg" id="restecg">
-                    <option value="-"> </option>
+                    <option value="" disabled selected hidden> - </option>
                     <option value="0">Normal</option>
                     <option value="1">Having ST-T wave abnormality (T wave inversions and/or ST elevation or depression of > 0.05 mV)</option>
                     <option value="2">Showing probable or definite left ventricular hypertrophy by Estes' criteria</option>
@@ -127,12 +134,14 @@
                     <input type="radio"
                            id="exang_yes"
                            name="fbs"
+                           value="1"
                            required>Yes</input>
                 </label>
                 <label for="exang_no">
                     <input type="radio"
                            id="exang_no"
-                           name="fbs">No</input>
+                           name="fbs"
+                           value="0">No</input>
                 </label>
           </div>
 
@@ -153,7 +162,7 @@
                     11. The slope of the peak exercise ST segment
                 </label>
                 <select name="slope" id="slope" required>
-                    <option value="-"> </option>
+                    <option value="" selected disabled hidden> - </option>
                     <option value="0">Upsloping</option>
                     <option value="1">Flat</option>
                     <option value="2">Downsloping</option>
