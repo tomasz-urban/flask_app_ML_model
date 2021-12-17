@@ -1,42 +1,55 @@
-from flask import Flask, render_template, request
-import pickle
+from flask import Flask, render_template, request, redirect, url_for
+import joblib
 import numpy as np
 
 app = Flask(__name__)
 
-model = pickle.load(open('heart_disease_random_forest.joblib', 'rb'))
-
+model = joblib.load(open('heart_disease_random_forest.joblib', 'rb'))
 
 @app.route("/")
 def home_page():
     return render_template('index.html')
 
 
-@app.route('/predict_heart_disease', methods=['POST'])
-def prediction_data():
-    age = request.form['age']
-    sex = request.form['sex']
-    cp = request.form['cp']
-    trestbps = request.form['trestbps']
-    chol = request.form['chol']
-    fbs = request.form['fbs']
-    restcg = request.form['restcg']
-    thalach = request.form['thalach']
-    exang = request.form['exang']
-    oldpeak = request.form['oldpeak']
-    slope = request.form['slope']
-    ca = request.form['ca']
-    thal = request.form['thal']
+@app.route("/questionnaire", methods=['POST', 'GET'])
+def questionnaire():
+    return render_template('questionnaire.html')
 
-    input_array = np.array([[age, sex, cp, trestbps, chol, fbs, restcg, thalach, exang, oldpeak, slope, ca, thal]])
-    pred = model.predict(input_array)
-    if pred == 1:
-        return render_template('positive.html')
-    # "According to the provided data You have a heart disease. Please contact a doctor immediately. " \
-    # "[NOTE: Remember that this app is only for educational purposes. " \
-    # "This result doesn't provide any medical indication or contraindication for treatment!"
-    else:
-        return render_template('negative.html')
-    # "According to the provided data You don't have a heart disease." \
-    # "[NOTE: Remember that this app is only for educational purposes. " \
-    # "This result doesn't provide any medical indication or contraindication for treatment!"
+
+@app.route('/predictions', methods=['POST', 'GET'])
+def prediction_data():
+    if request.method == 'POST':
+        age = request.form['age']
+        sex = request.form['sex']
+        cp = request.form['cp']
+        trestbps = request.form['trestbps']
+        chol = request.form['chol']
+        fbs = request.form['fbs']
+        restcg = request.form['restcg']
+        thalach = request.form['thalach']
+        exang = request.form['exang']
+        oldpeak = request.form['oldpeak']
+        slope = request.form['slope']
+
+        input_array = np.array([[age, sex, cp, trestbps, chol, fbs, restcg, thalach, exang, oldpeak, slope]])
+
+        pred = model.predict(input_array)
+        if pred == 1:
+            return redirect(url_for('positive'))
+        else:
+            return redirect(url_for('negative'))
+    return render_template('index.html')
+
+
+@app.route("/positive")
+def positive():
+    return render_template('positive.html')
+
+
+@app.route("/negative")
+def negative():
+    return render_template('negative.html')
+
+
+# if __name__ == "__main__":
+#     app.run(debug=True)
