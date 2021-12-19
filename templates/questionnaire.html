@@ -6,7 +6,7 @@
 
         <h2 class="major">Heart disease questionnaire</h2>
         <!-- Questionnaire Form -->
-        <form action="/questionnaire"
+        <form action="/predictions"
               id="prediction_data"
               method="POST">
 
@@ -15,7 +15,9 @@
                 <label for="age">
                     1. Age
                 </label>
-                <input type="text"
+                <input type="number"
+                       min="0"
+                       step="1"
                        id="age"
                        name="age"
                        placeholder="-"
@@ -62,8 +64,11 @@
                 <label for="trestbps">
                     4. Resting blood pressure (in mm Hg on admission to the hospital)
                 </label>
-                <input type="text"
+                <input type="number"
+                       min="0"
+                       step="1"
                        id="trestbps"
+                       name="trestbps"
                        placeholder="-"
                        required/>
           </div>
@@ -73,8 +78,11 @@
                 <label for="chol">
                     5. Serum cholesterol in mg/dl
                 </label>
-                <input type="text"
+                <input type="number"
+                       min="0"
+                       step="1"
                        id="chol"
+                       name="chol"
                        placeholder="-"
                        required/>
           </div>
@@ -105,7 +113,7 @@
                 <label>
                     7. Resting electrocardiography results
                 </label>
-                <select name="restecg" id="restecg">
+                <select name="restcg" id="restcg" required>
                     <option value="" disabled selected hidden> - </option>
                     <option value="0">Normal</option>
                     <option value="1">Having ST-T wave abnormality (T wave inversions and/or ST elevation or depression of > 0.05 mV)</option>
@@ -118,8 +126,11 @@
                 <label for="thalach">
                     8. Maximum heart rate achieved
                 </label>
-                <input type="text"
+                <input type="number"
+                       min="0"
+                       step="1"
                        id="thalach"
+                       name="thalach"
                        placeholder="-"
                        required/>
           </div>
@@ -133,14 +144,14 @@
                 <label for="exang_yes">
                     <input type="radio"
                            id="exang_yes"
-                           name="fbs"
+                           name="exang"
                            value="1"
                            required>Yes</input>
                 </label>
                 <label for="exang_no">
                     <input type="radio"
                            id="exang_no"
-                           name="fbs"
+                           name="exang"
                            value="0">No</input>
                 </label>
           </div>
@@ -150,8 +161,11 @@
                 <label for="oldpeak">
                     10. ST depression induced by exercise relative to rest
                 </label>
-                <input type="text"
+                <input type="number"
+                       min="0"
+                       step="0.1"
                        id="oldpeak"
+                       name="oldpeak"
                        placeholder="-"
                        required/>
           </div>
@@ -170,11 +184,11 @@
           </div>
 
             <!-- Submit button -->
-            <button type="submit" value="submit">
-                Submit
-            </button>
+            <a href="{{ url_for('prediction_data') }}">
+            <button class="primary">Submit</button></a>
         </form>
 
     </article>
 
 {% endblock %}
+
