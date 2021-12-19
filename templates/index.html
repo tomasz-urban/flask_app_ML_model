@@ -34,7 +34,7 @@
 								<li><a href="#skills">Skills</a></li>
 								<li><a href="#ML">ML</a></li>
 								<li><a href="#contact">Contact</a></li>
-								<!--<li><a href="#elements">Elements</a></li>-->
+
 							</ul>
 						</nav>
 					</header>
@@ -96,9 +96,11 @@
 							<article id="ML">
 								<h2 class="major">Machine Learning Playground</h2>
 								<span class="image main"><img src="static/images/alessandro-cerino-unsplash.jpg" alt="" /></span>
-								<p> <a href="#warning">Heart disease classification</a></p>
-								<p> Predicting heart disease (1 - present, 0 - not present)
-									providing attributes withing given fields using the explanation in the legend.   </p>
+								<p> <b><a href="#warning">HEART DISEASE CLASSIFICATION</a></b></p>
+								<p> Web application predicting heart disease using provided attributes from question form.
+									At the given <a href="heart_disease.csv" download>link</a> I provided the CSV file with the attributes and targets
+									(where 1 means positive diagnose and 0 means negative diagnose). This table can be used
+									to check if the model is predicting correctly.</p>
 							</article>
 
 						<!-- Heart disease WARNING -->
@@ -112,47 +114,49 @@
 									<button >DECLINE</button>
 								</form>
 
-								<form action="#heart_disease">
-									<button class="primary" >ACCEPT</button>
+								<form action="/questionnaire"
+									  id="questionnaire">
+									<a href="{{ url_for('questionnaire') }}">
+									<button class="primary" >ACCEPT</button></a>
 								</form>
 
 							</article>
 
-						<!-- Heart disease web app -->
-							<article id="heart_disease">
-								<h2 class="major">Heart disease classification</h2>
-								<p>	age - age in years <br>
-										sex -<br>
-										&emsp;Value 1: male<br>
-									    &emsp;Value 0: female <br>
-										cp - chest pain type (4 values) <br>
-										&emsp;Value 0: typical angina <br>
-										&emsp;Value 1: atypical angina <br>
-										&emsp;Value 2: non-anginal pain <br>
-										&emsp;Value 3: asymptomatic <br>
-										trestbps - resting blood pressure (in mm Hg on admission to the hospital) <br>
-										chol - serum cholesterol in mg/dl <br>
-										fbs - fasting blood sugar > 120 mg/dl (1 = true; 0 = false) <br>
-										restecg - resting electrocardiography results (values 0,1,2) <br>
-										&emsp;Value 0: normal <br>
-										&emsp;Value 1: having ST-T wave abnormality (T wave inversions and/or ST elevation or depression of > 0.05 mV) <br>
-										&emsp;Value 2: showing probable or definite left ventricular hypertrophy by Estes' criteria <br>
-										thalach - maximum heart rate achieved <br>
-										exang - exercise induced angina (1 = yes; 0 = no) <br>
-										oldpeak - ST depression induced by exercise relative to rest <br>
-										slope - the slope of the peak exercise ST segment <br>
-										&emsp;Value 0: upsloping <br>
-										&emsp;Value 1: flat <br>
-										&emsp;Value 2: downsloping <br>
-										ca - number of major vessels (0-3) colored by fluoroscopy <br>
-										thal: <br>
-										&emsp;3 = normal <br>
-										&emsp;6 = fixed defect <br>
-										&emsp;7 = reversible defect</p>
+<!--						&lt;!&ndash; Heart disease web app &ndash;&gt;-->
+<!--							<article id="heart_disease">-->
+<!--								<h2 class="major">Heart disease classification</h2>-->
+<!--								<p>	age - age in years <br>-->
+<!--										sex -<br>-->
+<!--										&emsp;Value 1: male<br>-->
+<!--									    &emsp;Value 0: female <br>-->
+<!--										cp - chest pain type (4 values) <br>-->
+<!--										&emsp;Value 0: typical angina <br>-->
+<!--										&emsp;Value 1: atypical angina <br>-->
+<!--										&emsp;Value 2: non-anginal pain <br>-->
+<!--										&emsp;Value 3: asymptomatic <br>-->
+<!--										trestbps - resting blood pressure (in mm Hg on admission to the hospital) <br>-->
+<!--										chol - serum cholesterol in mg/dl <br>-->
+<!--										fbs - fasting blood sugar > 120 mg/dl (1 = true; 0 = false) <br>-->
+<!--										restecg - resting electrocardiography results (values 0,1,2) <br>-->
+<!--										&emsp;Value 0: normal <br>-->
+<!--										&emsp;Value 1: having ST-T wave abnormality (T wave inversions and/or ST elevation or depression of > 0.05 mV) <br>-->
+<!--										&emsp;Value 2: showing probable or definite left ventricular hypertrophy by Estes' criteria <br>-->
+<!--										thalach - maximum heart rate achieved <br>-->
+<!--										exang - exercise induced angina (1 = yes; 0 = no) <br>-->
+<!--										oldpeak - ST depression induced by exercise relative to rest <br>-->
+<!--										slope - the slope of the peak exercise ST segment <br>-->
+<!--										&emsp;Value 0: upsloping <br>-->
+<!--										&emsp;Value 1: flat <br>-->
+<!--										&emsp;Value 2: downsloping <br>-->
+<!--										ca - number of major vessels (0-3) colored by fluoroscopy <br>-->
+<!--										thal: <br>-->
+<!--										&emsp;3 = normal <br>-->
+<!--										&emsp;6 = fixed defect <br>-->
+<!--										&emsp;7 = reversible defect</p>-->
 
 
 
-							</article>
+<!--							</article>-->
 
 
 						<!-- Contact -->
