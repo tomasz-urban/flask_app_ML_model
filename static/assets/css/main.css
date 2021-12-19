@@ -147,7 +147,15 @@ input, select, textarea {
 		line-height: 1.65;
 	}
 
-	input, select, textarea {
+	input, textarea {
+		color: #000000;
+		font-family: "Source Sans Pro", sans-serif;
+		font-weight: 600;
+		font-size: 0.9rem;
+		line-height: 1.65;
+	}
+
+	select {
 		color: #ffffff;
 		font-family: "Source Sans Pro", sans-serif;
 		font-weight: 600;
